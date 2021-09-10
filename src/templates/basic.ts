@@ -27,28 +27,11 @@ const basicTemplate: Template = {
       build: 'tsdx build',
       test: 'tsdx test',
       lint: 'tsdx lint',
-      prepare: 'tsdx build',
+      prepare: 'husky install && tsdx build',
       size: 'size-limit',
       analyze: 'size-limit --why',
     },
     peerDependencies: {},
-    /*
-    'size-limit': [
-      {
-        path: `dist/${safeName}.cjs.production.min.js`,
-        limit: '10 KB',
-      },
-      {
-        path: `dist/${safeName}.esm.js`,
-        limit: '10 KB',
-      },
-    ],
-    */
-    husky: {
-      hooks: {
-        'pre-commit': 'tsdx lint',
-      },
-    },
     prettier: {
       printWidth: 80,
       semi: true,
